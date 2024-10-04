@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt" // c언어의 #include <stdio.h> 역할
+	"fmt" // c언어의 #include <stdio.h> 역할 정의를 해주지 않아도 밑에서 사용하고 저장하면 자동으로 생성됨
 	"math"
 	"reflect"
 	"strings"
