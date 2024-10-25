@@ -14,7 +14,7 @@ import (
 func main() {
 	rand.Seed(time.Now().Unix())
 	answer := rand.Intn(6) + 1 // 0~5 + 1
-	fmt.Println(answer)
+	// fmt.Println(answer)
 
 	var win bool = false
 	for guesses := 0; guesses < 3; guesses++ {
@@ -40,7 +40,7 @@ func main() {
 			if answer != guess {
 				fmt.Println("틀렸습니다.")
 			}
-		} else if answer > guess {
+		} else if answer < guess {
 			fmt.Println("입력하신 수는 정답보다 작은 수 입니다. LOW")
 		} else {
 			fmt.Println("입력하신 수는 정답보다 큰 수 입니다. HIGH")
@@ -50,6 +50,6 @@ func main() {
 	if win {
 		fmt.Println("당신이 이겼습니다.")
 	} else {
-		fmt.Println("당신이 졌습니다.")
+		fmt.Printf("당신이 졌습니다. 정답은 %d입니다.\n", answer)
 	}
 }
