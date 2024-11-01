@@ -4,7 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"math"
 	"os"
 	"strconv"
 	"strings"
@@ -31,9 +30,10 @@ func main() {
 		isPrime = true
 	} else if n%2 == 0 {
 		isPrime = false
-	} else { // odd numbers
-		j := 3 // 짝수와 2는 위에서 다 처리하기 때문에 실행 횟수를 줄이려고 초기값과 증가값을 바꿈
-		for j <= int(math.Sqrt(float64(n))) {
+	} else {
+		j := 3
+		//for j <= int(math.Sqrt(float64(n))) {
+		for j*j <= n { // 제곱근이니까 이와 같이 간결하게 바꾸면 간편하게 보임
 			if n%j == 0 {
 				isPrime = false
 				break
