@@ -30,7 +30,9 @@ func main() {
 		for j < n {
 			if n%j == 0 {
 				isPrime = false
+				break // break 하나로 큰 향상을 이룸
 			}
+			fmt.Printf("%d ", j) // check j loop, break 없을 때와 있을 때를 비교하기 위한 문장, 이 부분을 break위에 넣는게 좋아보임
 			j++
 		}
 	}
