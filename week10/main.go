@@ -29,17 +29,17 @@ func main() {
 		isPrime = false
 	} else if n == 2 {
 		isPrime = true
-	} else if n%2 == 0 { // 2를 제외한 짝수는 모두 소수가 아님
+	} else if n%2 == 0 {
 		isPrime = false
-	} else {
-		j := 2
+	} else { // odd numbers
+		j := 3 // 짝수와 2는 위에서 다 처리하기 때문에 실행 횟수를 줄이려고 초기값과 증가값을 바꿈
 		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				isPrime = false
 				break
 			}
 			fmt.Printf("%d ", j)
-			j++
+			j += 2
 		}
 	}
 	if isPrime {
