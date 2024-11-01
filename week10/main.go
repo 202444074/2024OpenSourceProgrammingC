@@ -4,12 +4,14 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
 func main() {
+	//fmt.Printf("%f\n", math.Sqrt(19.0))   sqrt는 제곱근이라는 뜻
 	fmt.Print("input number : ")
 	in := bufio.NewReader(os.Stdin)
 	i, err := in.ReadString('\n')
@@ -27,12 +29,12 @@ func main() {
 		isPrime = false
 	} else {
 		j := 2
-		for j < n {
+		for j <= int(math.Sqrt(float64(n))) { // n이 일시적으로 float로 바뀌고 이를 다시 int로 바꿈, int로 바꾸면서 나머지를 버리게 되니까 <=으로 바꿈
 			if n%j == 0 {
 				isPrime = false
-				break // break 하나로 큰 향상을 이룸
+				break
 			}
-			fmt.Printf("%d ", j) // check j loop, break 없을 때와 있을 때를 비교하기 위한 문장, 이 부분을 break위에 넣는게 좋아보임
+			fmt.Printf("%d ", j)
 			j++
 		}
 	}
