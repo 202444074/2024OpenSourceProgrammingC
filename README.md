@@ -28,3 +28,8 @@ go.mod 만드는 법 : go mod init week**
     먼저 go get github.com/headfirstgo/keyboard 로 파일을 다운받고, import에 "week11/keyboard"대신 "github.com/headfirstgo/keyboard"을 써도됨.
     go get 알아두기. 책에 있으니 책보기
     계획으로는 9장까지 할 계획이라고 함(책이 쉬우니 기말끝나고 공부하면 좋다고 하심). 현재는 4장 패키지까지 함
+12주차
+    배열 만드는 기본 구조 var scores [3]int, var로 선언하고 이름을 만들고 3만큼의 크기에 int를 넣는다는 뜻
+    := 를 쓰는 것도 가능, 하지만 위의 방법도 가독성이 좋으니 알아두기
+    다른 인덱스에 값을 할당하지 않으면 예전에 한 각 타입의 zero value가 들어감(str은 "")
+    배열에 값을 넣을 때 엔터를 치면서 값을 넣을 때는 마지막 값 뒤에도 ,를 붙여야 함 ,없이 }로 바로 닫으면 필요 없음
