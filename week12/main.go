@@ -2,17 +2,12 @@ package main
 
 import (
 	"fmt"
-
-	"github.com/headfirstgo/keyboard"
+	"reflect"
 )
 
 func main() {
-	var gpas [3]float64 // github.com/headfirstgo/keyboard 에서 가져올 함수에서 float를 리턴해서 float64로 만듬
-	for i := 0; i < len(gpas); i++ {
-		fmt.Print("Input float number : ")
-		gpas[i], _ = keyboard.GetFloat() // float와 err가 들어가야하는데 에러가 안 난다고 가정하고 _를 넣음
-	}
-	for _, gpa := range gpas {
-		fmt.Println(gpa)
-	}
+	var gpa [5]float64 = [5]float64{3.5, 4.1, 4.5, 3.9, 4.2}
+	gpa_slice := gpa[1:4]                       // 파이선과 같은 슬라이스 뜻임
+	fmt.Println(gpa, reflect.TypeOf(gpa))       // 배열
+	fmt.Println(gpa, reflect.TypeOf(gpa_slice)) // 슬라이스
 }
