@@ -5,23 +5,23 @@ import (
 )
 
 func main() {
-	ages := make(map[string]int)
-
-	var name string
-	var age int
-
-	for {
-		fmt.Print("what's ur name? (exit to 'q') ")
-		fmt.Scanln(&name) // 이름이 같을 수 도 있어서 map은 못씀 그래서 전에 쓴 slice 코드를 이용해야 함
-		if name == "q" || name == "Q" {
-			break
-		}
-		fmt.Print("Ur age? ")
-		fmt.Scanln(&age)
-
-		ages[name] = age
+	var student struct {
+		id   int
+		name string
+		gpa  float32
 	}
-	for name, age := range ages {
-		fmt.Printf("%s is %d year old.\n", name, age)
+	student.id = 202444074
+	student.name = "이영희"
+	student.gpa = 4.5
+	fmt.Println(student.gpa)
+	var student2 struct {
+		id   int
+		name string
+		gpa  float32
 	}
+	student2.id = 20241234
+	student2.name = "아이다"
+	student2.gpa = 4.43
+	fmt.Println(student2.id)
+
 }
