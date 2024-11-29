@@ -21,20 +21,30 @@ func main() {
 	fmt.Println("How many visitores? ")
 	fmt.Scanln(&numVisitors)
 
-	vs := make([]visitor, numVisitors) // slice 만듦, 변수 선언과 동시에 만들 때는 := 사용
+	vs := make([]visitor, numVisitors)
 
 	for i := 0; i < numVisitors; i++ {
 		var age int
 		fmt.Print("Input age: ")
 		fmt.Scan(&age)
 
-		if age < 12 {
+		switch { // switch로 바꾸는 방법
+		case age < 12:
 			vs[i] = visitor{age: age, cost: 5000}
-		} else if age >= 12 && age < 65 {
+		case age >= 12 && age < 65:
 			vs[i] = visitor{age: age, cost: 10000}
-		} else {
+		default:
 			vs[i] = visitor{age: age, cost: 7000}
 		}
+		/*
+			if age < 12 {
+				vs[i] = visitor{age: age, cost: 5000}
+			} else if age >= 12 && age < 65 {
+				vs[i] = visitor{age: age, cost: 10000}
+			} else {
+				vs[i] = visitor{age: age, cost: 7000}
+			}
+		*/
 	}
 	fmt.Printf("Total price is %d won", calculateCost(vs))
 }
