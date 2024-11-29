@@ -40,3 +40,10 @@ go.mod 만드는 법 : go mod init week**
     go에서는 slice된 배열이 append 같은 새로운 값을 넣지 않는 이상 원본 배열의 변경이 공유 된다.v 4.1코드 확인하기
     v4.4에서 os.Args는 go run main.go arg1 arg2 arg3 처럼 입력하면 뒤에 입력한 수가 들어가는 형식인 듯
     v4.5에서 ...string 사용한 함수 부분은 책이랑 gpt로 다시 개념 확인하기 정확히 모르겠음
+14주차 13주에 map함 zero value with map 부분 근처까지 한 듯 이번 시간에 map 뒷부분 조금하고 struts로 넘어감
+    o x, 객관식 으로 기본기를 테스트 하신다하심
+    imort에서 주소로 가져올 때 go get 으로 파일을 다운받아야 하는 것을 강조하심
+    headfirst go 에서 가져온 votes 코드는 바탕화면 ch07에 있음, 사용된 GetString도 있음
+    sort 사용하는 정렬은 안 나옴
+    slice와 map이랑 다르게 다양한 구조체를 쓸 수 있는 것이 struct의 특징
+    slice 만드는 4가지 방법 기억하기
