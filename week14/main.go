@@ -1,25 +1,40 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-type student struct { // 코드가 중복되는 것을 type로 바꿀 수 있음
-	id   int
-	name string
-	gpa  float32
+type visitor struct {
+	age  int
+	cost int
+}
+
+func calculateCost(visitors []visitor) int {
+	// visitors : 구조체 슬라이스
+	totalCost := 0
+	for _, value := range visitors {
+		totalCost = totalCost + value.cost
+	}
+	return totalCost
 }
 
 func main() {
-	var student1 student
-	student1.id = 202444074
-	student1.name = "이영희"
-	student1.gpa = 4.5
-	fmt.Println(student1.gpa)
-	var student2 student
-	student2.id = 20241234
-	student2.name = "아이다"
-	student2.gpa = 4.43
-	fmt.Println(student2.id)
+	var numVisitors int
+	fmt.Println("How many visitores? ")
+	fmt.Scanln(&numVisitors)
 
+	vs := make([]visitor, numVisitors) // slice 만듦, 변수 선언과 동시에 만들 때는 := 사용
+
+	for i := 0; i < numVisitors; i++ {
+		var age int
+		fmt.Print("Input age: ")
+		fmt.Scan(&age)
+
+		if age < 12 {
+			vs[i] = visitor{age: age, cost: 5000}
+		} else if age >= 12 && age < 65 {
+			vs[i] = visitor{age: age, cost: 10000}
+		} else {
+			vs[i] = visitor{age: age, cost: 7000}
+		}
+	}
+	fmt.Printf("Total price is %d won", calculateCost(vs))
 }
