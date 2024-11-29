@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	// go get 해야함
 )
 
 func main() {
